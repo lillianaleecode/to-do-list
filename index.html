@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To Do List</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="myTodo">
+
+            <div class="inputvalue">
+                <input id="myInput" class="inputVal" type="text" placeholder=" Add task" value="">
+                <button class="btn">Add Task</button>       
+                <button class="btn" onclick="clearTask()">Clear all Task</button>
+            </div>
+            
+           
+            <div class="todoLists">   
+            </div>
+     
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script>
+        var input2 = document.getElementById("myInput");
+        input2.addEventListener("keypress", function(event) {
+          if (event.key === "Enter") {
+              console.log("enter was pressed");
+            event.preventDefault(); //prevents page reload
+            document.getElementsByClassName("btn")[0].click();
+            input2.value = ''; //reset after submit
+          }
+        });
+        </script>
+</body>
+</html>
